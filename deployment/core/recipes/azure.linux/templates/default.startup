@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo
+echo "########## Custom startup ##########"
+echo
+apt-get install apache2-utils -y
+htpasswd -b -c /etc/nginx/conf.d/.htpasswd opentrends galileo
+cp /home/site/config/nginx.conf /etc/nginx/sites-available/default
+service nginx reload
+echo
+echo "########## End custom startup ##########"
+echo
+
